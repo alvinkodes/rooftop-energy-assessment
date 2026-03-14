@@ -40,6 +40,11 @@ A straightforward use of `printf` to print `"Hello, World!"` to the console.
 ### Q2 — Is Even (`is_even/is_even.c`)
 Uses the modulo operator: if `n % 2 == 0`, the number is even and the function returns `true`, otherwise `false`.
 
+```bash
+./is_even <n>
+# Example: ./is_even 4
+```
+
 ---
 
 ### Q3 — Greater of Two (`greaterOfTwo/greater_of_two.c`)
@@ -47,10 +52,20 @@ Since `if`, ternary operators, and `max()` are disallowed, I used **bit manipula
 
 The idea: subtract `y` from `x` to get `diff`, then extract the sign bit by right-shifting `diff` by 63 bits. The sign bit is `0` if `x >= y` and `1` if `x < y`. The result is then computed as `x - sign * diff` — when `sign = 0` this returns `x`, and when `sign = 1` it returns `x - diff`, which equals `y`.
 
+```bash
+./greater_of_two <x> <y>
+# Example: ./greater_of_two 10 25
+```
+
 ---
 
 ### Q4 — Count Digit 3 (`count_digit/count_digit.c`)
 Uses **recursion** to process each digit. On each call, the last digit is checked with `n % 10`. If it equals `3`, the count increments. The function then recurses with `n / 10` until `n` reaches `0`.
+
+```bash
+./count_digit <n>
+# Example: ./count_digit 335
+```
 
 ---
 
@@ -58,6 +73,11 @@ Uses **recursion** to process each digit. On each call, the last digit is checke
 Iterates from the last character of the string to the first using a loop, building the reversed string by index. No standard library reversal methods are used.
 
 *Alternative considered:* Two-pointer in-place swap — equally valid, but iterating from the end into a new buffer felt more readable.
+
+```bash
+./string_rev <string>
+# Example: ./string_rev hello
+```
 
 ---
 

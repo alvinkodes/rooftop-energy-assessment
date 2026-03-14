@@ -1,7 +1,5 @@
 # RooftopIQ Software Intern Assessment
 
-Practical assessment solutions for the RooftopIQ Software Intern position.
-
 **Language:** C  
 **Compiler:** GCC
 
@@ -48,8 +46,6 @@ Uses the modulo operator: if `n % 2 == 0`, the number is even and the function r
 Since `if`, ternary operators, and `max()` are disallowed, I used **bit manipulation** to determine the larger value.
 
 The idea: subtract `y` from `x` to get `diff`, then extract the sign bit by right-shifting `diff` by 63 bits. The sign bit is `0` if `x >= y` and `1` if `x < y`. The result is then computed as `x - sign * diff` — when `sign = 0` this returns `x`, and when `sign = 1` it returns `x - diff`, which equals `y`.
-
-*Alternative considered:* Using `abs()` arithmetic — but bit manipulation is more low-level and avoids any standard library dependency.
 
 ---
 

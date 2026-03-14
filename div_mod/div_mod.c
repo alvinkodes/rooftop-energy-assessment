@@ -2,26 +2,26 @@
 #define SUCCESS 0
 #define ERROR 1
 
-int div_mod(int x, int y, int* div, int* mod) {
+int div_mod(int x, int y, int* q, int* r) {
 	if (y == 0) 
 		return (ERROR);
-	int negative = x < 0 != y < 0;
-	int abs_x = x < 0 ? -x : x;
-	int abs_y = y < 0 ? -y : y;
+	int negative = x < 0 != y < 0; // 1 if exactly one is negative
+	int abs_x = x < 0 ? -x : x; // absolute value of x
+	int abs_y = y < 0 ? -y : y; // absolute value of y
 	
-	int q = 0;
-	int r = abs_x;
+	int quotient = 0;
+	int remainder = abs_x;
 
-	while (r >= abs_y) {
-		r -= abs_y;
-		q++;
+	while (remainder >= abs_y) {
+		remainder -= abs_y;
+		quotient++;
 	}
 	if (negative)
-		q = -q;
-	if (x < 0 && r != 0)
-		r = -r;
-	*div = q;
-	*mod = r;
+		quotient = -quotient; // quotient is negative if exactly one is negative
+	if (x < 0 && remainder != 0)
+		remainder = -remainder; // remainder is negative if x is negative
+	*q = quotient;
+	*r = remainder;
 	return (SUCCESS);
 }
 

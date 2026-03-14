@@ -5,8 +5,8 @@
 
 long long greater_of_two(long long x, long long y) {
 	long long diff = x - y;
-	long long sign = (diff >> 63) & 1; // 0 if x >= y, 1 if x < y
-	return (x - sign * diff);
+	long long sign = (diff >> 63) & 1; // 0 if x >= y, 1 if x < y. Right shift by 63 bits to get the sign bit.
+	return (x - sign * diff); // if sign = 0, means x >= y, return x. Otherwise, return x + (1 * diff), which would be y.
 }
 
 bool safe_atoi(char* arg, long* val)

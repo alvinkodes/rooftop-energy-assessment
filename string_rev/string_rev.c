@@ -10,7 +10,7 @@ char* string_rev(char *ori_str) {
 	if (!rev_str)
 		return (NULL);
 	size_t end = len - 1;
-	for (size_t i = 0; i < len; i++) {
+	for (size_t i = 0; i < len; i++) { // Reverse copy from ori_str to rev_str
 		rev_str[i] = ori_str[end--];
 	}
 	return (rev_str);

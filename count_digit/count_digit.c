@@ -16,30 +16,30 @@ int count_digit(int n) {
 
 bool safe_positive_atoi(char* arg, long* val)
 {
-        size_t i = 0;
-        
-        // Return false if arg is empty.
-        if (!*arg)
-                return (false);
-	// Return false if negative number.
-        if (arg[i] == '+' || arg[i] == '-') {
-                if (arg[i] == '-')
+	size_t i = 0;
+	
+	// Return false if arg is empty.
+	if (!*arg)
 			return (false);
-                i++;
-        }
-        // Return false if there is no digits after.
-        if (!isdigit(arg[i]))
-                return (false);
-        while (arg[i]) {
-                if (!isdigit(arg[i]))
-                        return (false);
-                *val = (*val * 10) + arg[i] - '0';
-                // Return false if integer overflows.
-                if (*val > INT_MAX)
-                        return (false);
-                i++;
-        }
-        return (true);
+	// Return false if negative number.
+	if (arg[i] == '+' || arg[i] == '-') {
+			if (arg[i] == '-')
+		return (false);
+			i++;
+	}
+	// Return false if there is no digits after.
+	if (!isdigit(arg[i]))
+			return (false);
+	while (arg[i]) {
+			if (!isdigit(arg[i]))
+					return (false);
+			*val = (*val * 10) + arg[i] - '0';
+			// Return false if integer overflows.
+			if (*val > INT_MAX)
+					return (false);
+			i++;
+	}
+	return (true);
 }
 
 int main(int ac, char* av[]) {

@@ -2,7 +2,7 @@
 
 char first_uniq_char(char *s)
 {
-	char counts[128] = {0};
+	char counts[128] = {0}; // one slot per ASCII character
 
 	for (size_t i = 0; s[i] != '\0'; i++) {
 		counts[s[i]] += 1;

@@ -7,8 +7,8 @@ typedef struct s_node {
 } t_node;
 
 typedef struct s_stack {
-	t_node* head;
-	size_t size;
+	t_node* head; // First node of the stack
+	size_t size; // Number of nodes in the stack
 } t_stack;
 
 t_node* create_node(int val) {
@@ -23,26 +23,20 @@ t_node* create_node(int val) {
 }
 
 void push(t_stack* stack, t_node* node) {
-	if (!stack->head) {
-		stack->head = node;
-		printf("  push(%d)  ->  top is now %d\n", node->val, stack->head->val);
-		stack->size++;
-		return ;
-	}
 	node->next = stack->head;
-	stack->head = node;
+	stack->head = node;  // New node becomes the head node
 	stack->size++;
 	printf("  push(%d)  ->  top is now %d\n", node->val, stack->head->val);
 } 
 
 int pop(t_stack* stack) {
-	if (!stack->head) {
+	if (!stack->head) { // If the stack is empty, exit program.
 		printf("The stack is empty! Exiting...\n");
 		exit(EXIT_FAILURE);
 	}
 	t_node* tmp = stack->head;
 	int value = tmp->val;
-	stack->head = tmp->next;
+	stack->head = tmp->next; // Head moves down one node
 	free(tmp);
 	stack->size--;
 	if (stack->head)
@@ -53,7 +47,7 @@ int pop(t_stack* stack) {
 }
 
 int peek(t_stack* stack) {
-	if (!stack->head) {
+	if (!stack->head) { // If the stack is empty, exit program.
 		printf("The stack is empty! Exiting...\n");
 		exit(EXIT_FAILURE);
 	}
@@ -109,6 +103,13 @@ int main() {
 	printf("\n");
 	print_stack(&stack);
 
+	printf("\n");
+	pop(&stack);
+	pop(&stack);
+	pop(&stack);
+
+	printf("\n");
+	print_stack(&stack);
 	free_stack(&stack);
 	return (0);
 }

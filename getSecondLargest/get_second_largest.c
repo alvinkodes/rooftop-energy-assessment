@@ -9,11 +9,11 @@ int get_second_largest(int arr[], size_t size, int* res) {
 
 	int largest = INT_MIN;
 	int second_largest = INT_MIN;
-	bool found = false;
+	bool found = false; // track if second_largest was ever legitimately set
 	
 	for (size_t i = 0; i < size; i ++) {
 		if (arr[i] > largest) {
-			if (largest != INT_MIN) {
+			if (largest != INT_MIN) { // only promote if largest was real
 				second_largest = largest;
 				found = true;
 			}
@@ -23,7 +23,7 @@ int get_second_largest(int arr[], size_t size, int* res) {
 			found = true;
 		}
 	}
-	if (!found) return (FAILED);
+	if (!found) return (FAILED); // failure, no second largest
 	*res = second_largest; return (SUCCESS);
 }
 

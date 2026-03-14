@@ -18,7 +18,7 @@ int get_second_largest(int arr[], size_t size, int* res) {
 				found = true;
 			}
 			largest = arr[i];
-		} else if (arr[i] > second_largest && arr[i] != largest) {
+		} else if (arr[i] >= second_largest && arr[i] != largest) {
 			second_largest = arr[i];
 			found = true;
 		}
@@ -66,7 +66,7 @@ int main(void) {
 		printf("Error: no valid second largest number!\n");
 
 	printf("\nTest 5: Two unique integers\n");
-	int two_uniq[] = {2147483647, -2146483648};
+	int two_uniq[] = {2147483647, -2147483648};
 	size_t size4 = sizeof(two_uniq) / sizeof(two_uniq[0]);
 
 	if (get_second_largest(two_uniq, size4, &res) == SUCCESS)

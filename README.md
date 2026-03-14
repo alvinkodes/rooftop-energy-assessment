@@ -1,4 +1,4 @@
-# RooftopIQ Software Intern Assessment
+# Rooftop Software Intern Assessment
 
 **Language:** C  
 **Compiler:** GCC

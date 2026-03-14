@@ -1,8 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <limits.h>
-#include <ctype.h>
+#include <stdio.h> //printf
+#include <stdbool.h> //booleans
+#include <limits.h> //INT_MAX
+#include <ctype.h> //isdigit
 
 int count_digit(int n) {
 	int count = 0;

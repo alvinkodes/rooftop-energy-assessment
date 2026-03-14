@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <limits.h>
-#include <ctype.h>
+#include <stdio.h> //printf
+#include <stdbool.h> //booleans
+#include <limits.h> //INT_MIN && INT_MAX
+#include <ctype.h> //isdigit
 
 long long greater_of_two(long long x, long long y) {
 	long long diff = x - y;

@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> //printf
 #define SUCCESS 0
 #define ERROR 1
 

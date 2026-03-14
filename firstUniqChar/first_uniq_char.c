@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> //printf
 
 char first_uniq_char(char *s)
 {

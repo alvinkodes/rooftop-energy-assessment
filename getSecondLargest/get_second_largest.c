@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <limits.h>
-#include <stdbool.h>
+#include <stdio.h> //printf
+#include <limits.h> //INT_MIN
+#include <stdbool.h> //booleans
 #define SUCCESS 0
 #define FAILED 1
 

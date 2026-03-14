@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> //printf
+#include <stdlib.h> //malloc && free
 
 typedef struct s_node {
 	int val;
